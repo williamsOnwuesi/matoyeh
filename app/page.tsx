@@ -13,6 +13,10 @@ export default function Home() {
           priority
         />  
       </main>
+
+      <footer className="row-start-3 text-center text-sm text-zinc-400">
+        <p>© 2025 Matoyeh. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
