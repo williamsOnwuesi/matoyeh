@@ -1,149 +1,144 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Menu, Printer, Phone, ChevronDown, Cpu, ImageIcon } from "lucide-react";
-import { useState } from "react";
+import {
+  Menu,
+  ChevronDown,
+  Printer,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
+
+  const galleryUrls = [
+    "https://images.unsplash.com/photo-1581091870622-7a7a55c2c4a9?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1603791452906-bb7e17e9e47b?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1622495891978-0b364bc8f6e8?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1573164574397-8f1e2e7d4d3b?auto=format&fit=crop&w=800&q=60",
+  ];
 
   return (
-    <main className="min-h-screen bg-gray-950 text-gray-100">
+    <main className="min-h-screen bg-gray-100 text-gray-900">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between bg-gray-900/80 px-6 py-4 backdrop-blur-md">
-        <div className="flex items-center gap-2 text-xl font-bold">
-          <Cpu className="text-pink-400" />
-          <span>Matoyeh Media & Tech</span>
-        </div>
-
-        {/* Desktop Menu */}
-        <div className="hidden items-center gap-6 md:flex">
-          <a href="#" className="hover:text-pink-400 transition">
-            Home
-          </a>
-          <div className="relative">
-            <button
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
-              className="flex items-center gap-1 hover:text-pink-400 transition"
-            >
-              Services <ChevronDown className="h-4 w-4" />
-            </button>
-            {isDropdownOpen && (
-              <div
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
-                className="absolute left-0 mt-2 w-48 rounded-lg bg-gray-800 shadow-lg"
-              >
-                {[
-                  "Banner Printing",
-                  "Shirt Printing",
-                  "Cup/Cap Printing",
-                  "Project Binding",
-                  "Videography",
-                  "Computer Training",
-                ].map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="block px-4 py-2 text-sm hover:bg-gray-700"
-                  >
-                    {item}
-                  </a>
-                ))}
-              </div>
-            )}
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-2 text-2xl font-bold text-indigo-600">
+            <Printer />
+            <span>Matoyeh Media & Tech</span>
           </div>
-          <a href="#gallery" className="hover:text-pink-400 transition">
-            Gallery
-          </a>
-          <a href="#contact" className="hover:text-pink-400 transition">
-            Contact
-          </a>
+
+          <div className="hidden md:flex items-center gap-6">
+            <a href="#" className="hover:text-indigo-500">Home</a>
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesDropdown(true)}
+              onMouseLeave={() => setServicesDropdown(false)}
+            >
+              <button className="flex items-center gap-1 hover:text-indigo-500">
+                Services <ChevronDown className="w-4 h-4" />
+              </button>
+              {servicesDropdown && (
+                <div className="absolute left-0 mt-2 w-48 rounded-md bg-white shadow-lg border border-gray-200">
+                  {[
+                    "Banner Printing",
+                    "Cup / Cap Printing",
+                    "Shirt Printing",
+                    "DI Printing",
+                    "Computer Training",
+                    "Project Binding",
+                  ].map((svc) => (
+                    <a
+                      key={svc}
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      {svc}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+            <a href="#gallery" className="hover:text-indigo-500">Gallery</a>
+            <a href="#contact" className="hover:text-indigo-500">Contact</a>
+          </div>
+
+          <button
+            className="md:hidden p-2 hover:text-indigo-500"
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            <Menu className="w-6 h-6" />
+          </button>
         </div>
 
-        {/* Mobile Menu */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden hover:text-pink-400"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-
-        {isMenuOpen && (
-          <div className="absolute left-0 top-[64px] w-full bg-gray-900/95 p-4 md:hidden">
-            <a href="#" className="block py-2 hover:text-pink-400">
-              Home
-            </a>
-            <a href="#gallery" className="block py-2 hover:text-pink-400">
-              Gallery
-            </a>
-            <a href="#contact" className="block py-2 hover:text-pink-400">
-              Contact
-            </a>
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200">
+            <a href="#" className="block px-6 py-3 hover:bg-gray-100">Home</a>
+            <a href="#gallery" className="block px-6 py-3 hover:bg-gray-100">Gallery</a>
+            <a href="#contact" className="block px-6 py-3 hover:bg-gray-100">Contact</a>
           </div>
         )}
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden px-6 py-24 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+      <section className="bg-indigo-600 text-white py-24 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400"
+          className="mx-auto max-w-3xl text-center"
         >
-          Matoyeh Media & Technology
-        </motion.h1>
-        <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-          General Printing • Videography • Computer Training • Project Binding
-        </p>
-        <p className="mt-2 text-pink-400 font-semibold">
-          Super Bonanza: Get 10% - 40% OFF on all printings!
-        </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <a
-            href="#gallery"
-            className="rounded-xl bg-gradient-to-r from-pink-500 to-indigo-500 px-8 py-3 text-lg font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-pink-500/30"
-          >
-            View Gallery
-          </a>
-          <a
-            href="#contact"
-            className="rounded-xl border border-pink-400 px-8 py-3 text-lg font-semibold text-pink-400 transition hover:bg-pink-400 hover:text-white"
-          >
-            Contact Us
-          </a>
-        </div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold">
+            Matoyeh Media & Technology
+          </h1>
+          <p className="mt-4 text-lg">
+            General Printing • Videography • Computer Training • Project Binding
+          </p>
+          <p className="mt-2 text-yellow-300 font-semibold">
+            Super Bonanza: <span className="text-white">10% – 40% Discount</span>
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <a
+              href="#gallery"
+              className="px-6 py-3 bg-yellow-400 text-indigo-900 font-semibold rounded-lg shadow hover:scale-105 transition"
+            >
+              View Gallery
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-indigo-600 transition"
+            >
+              Contact Us
+            </a>
+          </div>
+        </motion.div>
       </section>
 
-      {/* Gallery */}
-      <section id="gallery" className="px-6 py-16 bg-gray-900">
-        <h2 className="text-center text-3xl font-bold text-pink-400 mb-10">
-          Our Works & Prints
+      {/* Gallery Section */}
+      <section id="gallery" className="py-16 px-6 bg-gray-50">
+        <h2 className="text-3xl font-bold text-indigo-600 text-center mb-10">
+          Our Work Gallery
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60",
-          ].map((url, i) => (
+          {galleryUrls.map((url, idx) => (
             <motion.div
-              key={i}
-              whileHover={{ scale: 1.03 }}
-              className="relative overflow-hidden rounded-2xl shadow-lg"
+              key={idx}
+              whileHover={{ scale: 1.02 }}
+              className="overflow-hidden rounded-lg shadow-lg bg-white"
             >
               <Image
                 src={url}
-                alt="Matoyeh Print Sample"
+                alt={`Print sample ${idx + 1}`}
                 width={800}
                 height={500}
-                className="h-64 w-full object-cover transition-transform duration-500 hover:scale-110"
+                className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
               />
             </motion.div>
           ))}
@@ -151,27 +146,23 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section
-        id="contact"
-        className="px-6 py-16 bg-gradient-to-br from-indigo-700 via-purple-700 to-pink-600 text-center"
-      >
-        <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-        <p className="text-gray-200 max-w-xl mx-auto">
-          Reach out for your printing, media, and training needs. We’re always ready to help you bring your ideas to life.
+      <section id="contact" className="py-16 px-6 bg-indigo-700 text-white">
+        <h2 className="text-3xl font-bold text-center">Get in Touch</h2>
+        <p className="mt-4 max-w-2xl mx-auto text-center">
+          For all your printing, branding, and training needs, reach out to us:
         </p>
-
-        <div className="mt-6 flex flex-col gap-2 text-gray-100">
-          <p className="flex justify-center items-center gap-2">
-            <Phone className="h-5 w-5" /> 08158233333 • 08068899417
+        <div className="mt-8 space-y-4 text-center">
+          <p className="flex items-center justify-center gap-2">
+            <Phone className="w-5 h-5" /> 08158233333 · 08068899417
           </p>
-          <p className="flex justify-center items-center gap-2">
-            <ImageIcon className="h-5 w-5" /> By Unity Garden, Opp. A.A Rano, Secretariat Junction Ado, Karu LGA, Nasarawa State
+          <p className="flex items-center justify-center gap-2">
+            <MapPin className="w-5 h-5" /> Unity Garden, Opp. A.A Rano, Secretariat Junction Ado, Karu LGA, Nasarawa State
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-950 py-6 text-center text-sm text-gray-400 border-t border-gray-800">
+      <footer className="bg-gray-900 text-gray-400 py-6 text-center">
         © {new Date().getFullYear()} Matoyeh Media & Technology. All rights reserved.
       </footer>
     </main>
