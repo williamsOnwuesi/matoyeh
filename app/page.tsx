@@ -16,12 +16,13 @@ export default function Home() {
   const [servicesDropdown, setServicesDropdown] = useState(false);
 
   const galleryUrls = [
-    "https://images.unsplash.com/photo-1581091870622-7a7a55c2c4a9?auto=format&fit=crop&w=800&q=60",
+    
     "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60",
     "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1603791452906-bb7e17e9e47b?auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1622495891978-0b364bc8f6e8?auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1573164574397-8f1e2e7d4d3b?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60",
   ];
 
   return (
