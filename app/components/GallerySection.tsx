@@ -23,7 +23,7 @@ const galleryItems = [
     description:
       "Personalized mugs and caps with your logo or design — perfect for gifts or promotions.",
     imageUrl:
-      "/images/mug-printing.jpg",
+      "./images/mug-printing.jpg",
   },
   {
     title: "Project Binding",
