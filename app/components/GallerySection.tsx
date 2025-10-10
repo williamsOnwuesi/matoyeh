@@ -16,7 +16,7 @@ const galleryItems = [
     description:
       "Custom T-shirt printing for teams, businesses, and events with professional finishes.",
     imageUrl:
-      "/images/t-shirt.webp", 
+      "/t-shirt.webp", 
   },
   {
     title: "Mug & Cap Printing",
