@@ -20,7 +20,7 @@ const eventsData = [
     date: "Dec 3, 2025",
     description: "A full-day intensive training in graphic design and branding.",
     imageUrl:
-      "/images/graphics-design.jpeg",
+      "/graphics-design.jpeg",
   },
   {
     id: "3",
@@ -36,7 +36,7 @@ const eventsData = [
     date: "Feb 7, 2026",
     description: "Hands-on session for T-shirt and fabric printing experts.",
     imageUrl:
-      "/images/t-shirt-master.jpg",
+      "/t-shirt-master.jpg",
   },
   {
     id: "5",

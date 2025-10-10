@@ -9,7 +9,7 @@ const galleryItems = [
     description:
       "High-quality banners for events, advertising, and branding — durable and vibrant.",
     imageUrl:
-      "/images/large-format.jpg",
+      "/large-format.jpg",
   },
   {
     title: "T-Shirt Printing",
