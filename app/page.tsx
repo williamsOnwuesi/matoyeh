@@ -3,6 +3,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Hero from "./components/Hero";
+import EventsSection from "./components/EventsSection";
+import GallerySection from "./components/GallerySection";
+import Footer from "./components/Footer";
+
 import {
   Menu,
   ChevronDown,
@@ -89,83 +94,19 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-indigo-600 text-white py-24 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <h1 className="text-4xl sm:text-5xl font-extrabold">
-            Matoyeh Media & Technology
-          </h1>
-          <p className="mt-4 text-lg">
-            General Printing • Videography • Computer Training • Project Binding
-          </p>
-          <p className="mt-2 text-yellow-300 font-semibold">
-            Super Bonanza: <span className="text-white">10% – 40% Discount</span>
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <a
-              href="#gallery"
-              className="px-6 py-3 bg-yellow-400 text-indigo-900 font-semibold rounded-lg shadow hover:scale-105 transition"
-            >
-              View Gallery
-            </a>
-            <a
-              href="#contact"
-              className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-indigo-600 transition"
-            >
-              Contact Us
-            </a>
-          </div>
-        </motion.div>
-      </section>
+      <Hero />
+
+      {/* Events Section */}
+      <EventsSection />
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-16 px-6 bg-gray-50">
-        <h2 className="text-3xl font-bold text-indigo-600 text-center mb-10">
-          Our Work Gallery
-        </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryUrls.map((url, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.02 }}
-              className="overflow-hidden rounded-lg shadow-lg bg-white"
-            >
-              <Image
-                src={url}
-                alt={`Print sample ${idx + 1}`}
-                width={800}
-                height={500}
-                className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16 px-6 bg-indigo-700 text-white">
-        <h2 className="text-3xl font-bold text-center">Get in Touch</h2>
-        <p className="mt-4 max-w-2xl mx-auto text-center">
-          For all your printing, branding, and training needs, reach out to us:
-        </p>
-        <div className="mt-8 space-y-4 text-center">
-          <p className="flex items-center justify-center gap-2">
-            <Phone className="w-5 h-5" /> 08158233333 · 08068899417
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <MapPin className="w-5 h-5" /> Unity Garden, Opp. A.A Rano, Secretariat Junction Ado, Karu LGA, Nasarawa State
-          </p>
-        </div>
-      </section>
+      <GallerySection />
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-6 text-center">
-        © {new Date().getFullYear()} Matoyeh Media & Technology. All rights reserved.
-      </footer>
+  
+      <Footer/>
+     
+
     </main>
   );
 }
