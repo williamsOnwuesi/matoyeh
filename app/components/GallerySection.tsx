@@ -37,14 +37,14 @@ const galleryItems = [
     description:
       "Empowering you with hands-on computer and design skills through practical training.",
     imageUrl:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60",
+      "/computer-training.png",
   },
   {
     title: "Videography & Photography",
     description:
       "Capture your moments and promote your brand with our expert photo and video services.",
     imageUrl:
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=60",
+      "/videography.jpeg",
   },
 ];
 
