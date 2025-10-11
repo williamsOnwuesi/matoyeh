@@ -24,33 +24,6 @@ const teamMembers = [
     instagram: "#",
   },
   {
-    name: "David Okoro",
-    role: "Print Technician",
-    image:
-      "/david.jpg",
-    bio: "Specialist in large-format printing and high-quality media production.",
-    linkedin: "#",
-    instagram: "#",
-  },
-  {
-    name: "Amaka Bello",
-    role: "Customer Relations",
-    image:
-      "/matoyeh-team.jpg",
-    bio: "Ensures seamless client communication and top-notch service delivery.",
-    linkedin: "#",
-    instagram: "#",
-  },
-  {
-    name: "James Ojo",
-    role: "Videographer",
-    image:
-      "/matoyeh-team.jpg",
-    bio: "Captures the visual essence of every event with creative cinematography.",
-    linkedin: "#",
-    instagram: "#",
-  },
-  {
     name: "Matoyeh Media Team",
     role: "General Management",
     image:
