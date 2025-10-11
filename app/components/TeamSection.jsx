@@ -9,7 +9,7 @@ const teamMembers = [
     name: "Matoyeh",
     role: "CEO & Founder",
     image:
-      "/matoyeh2.jpg",
+      "/matoyeh2.JPG",
     bio: "Visionary leader with a passion for media and technology innovation.",
     linkedin: "#",
     instagram: "#",
@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Nene",
     role: "Training Coordinator",
     image:
-      "/nene.jpg",
+      "/nene.JPG",
     bio: "Passionate about empowering learners through hands-on computer training.",
     linkedin: "#",
     instagram: "#",
