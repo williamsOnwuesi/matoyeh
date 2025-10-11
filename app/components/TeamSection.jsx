@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Nene",
     role: "Training Coordinator",
     image:
-      "/matoyeh-team.jpg",
+      "/nene.JPG",
     bio: "Passionate about empowering learners through hands-on computer training.",
     linkedin: "#",
     instagram: "#",
