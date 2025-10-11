@@ -24,11 +24,11 @@ const eventsData = [
   },
   {
     id: "3",
-    title: "Open House & Product Showcase",
+    title: "Bonanza & Product Showcase",
     date: "Jan 10, 2026",
     description: "See our latest printing equipment and special offers in person.",
     imageUrl:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60",
+      "/bonanza.jpg",
   },
   {
     id: "4",
@@ -36,7 +36,7 @@ const eventsData = [
     date: "Feb 7, 2026",
     description: "Hands-on session for T-shirt and fabric printing experts.",
     imageUrl:
-      "/t-shirt-master.jpg",
+      "/july-bonanza-t-shirt.jpg",
   },
   {
     id: "5",

@@ -30,7 +30,7 @@ const galleryItems = [
     description:
       "Professional project and document binding for students, offices, and businesses.",
     imageUrl:
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=60",
+      "/project-binding.jpg",
   },
   {
     title: "Computer Training",
